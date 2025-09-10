@@ -2,11 +2,14 @@
 
 package server;
 
-public class LibraryInterface {
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+import java.util.List;
+import model.Book;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+public interface LibraryInterface extends Remote {
+    List<Book> getAllBooks() throws RemoteException;
+    String borrowBook(String bookId) throws RemoteException;
+    String returnBook(String bookId) throws RemoteException;
 }
+
