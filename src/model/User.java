@@ -1,3 +1,5 @@
+// Class cho người dùng
+
 package model;
 
 public class User {

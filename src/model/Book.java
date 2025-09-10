@@ -1,3 +1,5 @@
+// Class cho sách
+
 package model;
 
 public class Book {

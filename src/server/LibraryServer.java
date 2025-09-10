@@ -1,3 +1,5 @@
+ // Khởi động server, bind đối tượng RMI
+
 package server;
 
 public class LibraryServer {

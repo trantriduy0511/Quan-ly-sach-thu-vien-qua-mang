@@ -1,3 +1,5 @@
+// Giao diện Java Swing cho client
+
 package client;
 
 public class ClientUI {
