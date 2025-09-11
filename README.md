@@ -32,7 +32,7 @@ Mục tiêu là tạo ra một hệ thống **Client – Server**, trong đó:
 - **Tìm kiếm sách (Client)**: theo tên, tác giả, thể loại.
 - **Mượn và trả sách**: ghi nhận trên server.
 - **Lưu trữ dữ liệu**: bằng File hoặc Database (MySQL/SQLite).
-- **Trao đổi dữ liệu** qua Socket TCP.
+- **Trao đổi dữ liệu** qua RMI.
 
 ## 🔧 2. Ngôn ngữ lập trình sử dụng: [![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/)
 - **Ngôn ngữ lập trình**: Java  
@@ -53,6 +53,7 @@ Mục tiêu là tạo ra một hệ thống **Client – Server**, trong đó:
 © 2025 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
 
 ---
+
 
 
 
