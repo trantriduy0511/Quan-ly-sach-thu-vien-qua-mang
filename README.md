@@ -4,7 +4,7 @@
     </a>
 </h2>
 <h2 align="center">
-   NETWORK PROGRAMMING
+   QUẢN LÝ SÁCH - THƯ VIỆN QUA MẠNG
 </h2>
 <div align="center">
     <p align="center">
@@ -53,4 +53,5 @@ Mục tiêu là tạo ra một hệ thống **Client – Server**, trong đó:
 © 2025 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
 
 ---
+
 
