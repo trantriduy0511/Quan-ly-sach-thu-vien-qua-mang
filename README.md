@@ -21,7 +21,7 @@
 </div>
 
 ## 📖 1. Giới thiệu
-Ứng dụng **Quản lý sách – thư viện qua mạng** được xây dựng bằng **Java Swing** (giao diện người dùng) và **Java Socket RMI** (trao đổi dữ liệu qua mạng).  
+Ứng dụng **Quản lý sách – thư viện qua mạng** được xây dựng bằng **Java Swing** (giao diện người dùng) và **Giao thức RMI** (trao đổi dữ liệu qua mạng).  
 Mục tiêu là tạo ra một hệ thống **Client – Server**, trong đó:
 - Server quản lý dữ liệu sách, người dùng, thông tin mượn/trả.
 - Client cung cấp giao diện cho người dùng tìm kiếm và mượn sách trực tuyến.
@@ -53,6 +53,7 @@ Mục tiêu là tạo ra một hệ thống **Client – Server**, trong đó:
 © 2025 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
 
 ---
+
 
 
 
