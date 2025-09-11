@@ -41,8 +41,8 @@ Mục tiêu là tạo ra một hệ thống **Client – Server**, trong đó:
 - **Lưu trữ dữ liệu**:
   - File (Object Serialization/JSON) hoặc
   - Database (MySQL/SQLite qua JDBC)  
-- **Môi trường phát triển**: NetBeans / IntelliJ / Eclipse  
-- **Hệ điều hành**: Windows/Linux
+- **Môi trường phát triển**: Eclipse  
+- **Hệ điều hành**: Windows
   
 ## 🚀 3. Các project đã thực hiện
 
@@ -53,5 +53,6 @@ Mục tiêu là tạo ra một hệ thống **Client – Server**, trong đó:
 © 2025 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
 
 ---
+
 
 
