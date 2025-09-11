@@ -26,6 +26,7 @@
 - Java Swing để xây dựng giao diện người dùng.
   
 📌Mục tiêu 
+
 Tạo ra một hệ thống thư viện trực tuyến, trong đó Server quản lý dữ liệu (sách, người dùng, mượn/trả), còn Client cung cấp giao diện cho người dùng đăng nhập, tìm kiếm và mượn sách từ xa.
 
   ### ✨ Các chức năng chính
@@ -55,6 +56,7 @@ Tạo ra một hệ thống thư viện trực tuyến, trong đó Server quản
 © 2025 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
 
 ---
+
 
 
 
