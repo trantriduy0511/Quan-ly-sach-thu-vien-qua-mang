@@ -40,11 +40,11 @@ Tạo ra một hệ thống thư viện trực tuyến, trong đó Server quản
 ## 🔧 2. Ngôn ngữ lập trình sử dụng: [![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/)
 - **Ngôn ngữ lập trình**: Java  
 - **Giao diện**: Java Swing  
-- **Mạng**: Socket TCP/IP (ServerSocket, Socket)  
+- **Mạng**: Java RMI (ServerSocket, Socket)  
 - **Lưu trữ dữ liệu**:
   - File (Object Serialization/JSON) hoặc
   - Database (MySQL/SQLite qua JDBC)  
-- **Môi trường phát triển**: Eclipse  
+- **Môi trường phát triển**: Eclipse IDE
 - **Hệ điều hành**: Windows
   
 ## 🚀 3. Các project đã thực hiện
@@ -56,6 +56,7 @@ Tạo ra một hệ thống thư viện trực tuyến, trong đó Server quản
 © 2025 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
 
 ---
+
 
 
 
