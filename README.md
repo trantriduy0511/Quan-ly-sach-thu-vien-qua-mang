@@ -210,8 +210,8 @@ Giao diện đăng nhập sẽ hiện ra.
 Sau khi khởi tạo dữ liệu, hệ thống sẽ tự động tạo tài khoản mặc định:
 
 - **Admin**: 
-  - Email: `admin@library.com` (hoặc theo cấu hình trong DatabaseManager)
-  - Password: `admin123`
+  - Email: `dainam@dnu.edu.vn` (hoặc theo cấu hình trong DatabaseManager)
+  - Password: `dainam`
 
 - **User**: Có thể đăng ký tài khoản mới hoặc sử dụng tài khoản mẫu đã được tạo tự động.
 
@@ -311,10 +311,9 @@ Quan_Ly_Sach_Thu_Vien_Qua_Mang/
 
 ## 👤 5. Liên hệ
 
-**Dự án được phát triển cho môn học Lập Trình Mạng.**
-
-**Faculty of Information Technology**  
-**DaiNam University**
+**Họ tên**: Trần Trí Duy.  
+**Lớp**: CNTT 16-03.  
+**Email**: trantriduy2004ss@gmail.com.
 
 © 2025 Faculty of Information Technology, DaiNam University. All rights reserved.
 
