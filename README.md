@@ -70,15 +70,15 @@ Tạo ra một hệ thống thư viện trực tuyến, trong đó Server quản
 ## 🚀 3. Hình ảnh giao diện
 
 <p align="center">
-  <img src="images/login_screenshot.png" alt="Giao diện đăng nhập" width="700"/>
+  <img src="images/dn.jpg" alt="Giao diện đăng nhập" width="700"/>
 </p>
 
 <p align="center">
-  <img src="images/admin_dashboard_screenshot.png" alt="Giao diện Admin Dashboard" width="700"/>
+  <img src="images/tongquat.jpg" alt="Giao diện Admin Tổng quát" width="700"/>
 </p>
 
 <p align="center">
-  <img src="images/user_home_screenshot.png" alt="Giao diện User Home" width="700"/>
+  <img src="images/trangchu.jpg" alt="Giao diện User Home" width="700"/>
 </p>
 
 ## 📝 4. Hướng dẫn cài đặt và sử dụng
