@@ -222,18 +222,21 @@ Sau khi khởi tạo dữ liệu, hệ thống sẽ tự động tạo tài kho�
 Database: `library_db`
 
 **Collections:**
-- `users` - Thông tin người dùng
-- `books` - Thông tin sách
 - `book_copies` - Bản sao sách
+- `books` - Thông tin sách
 - `borrow_records` - Lịch sử mượn trả
-- `fines` - Thông tin phạt
 - `categories` - Thể loại sách
+- `fines` - Thông tin phạt
+- `notifications` - Thông báo yêu cầu trả sách 
+- `settings` - Cài đặt
+- `users` - Thông tin người dùng
+
 
 Hệ thống sẽ tự động khởi tạo dữ liệu mẫu khi server khởi động lần đầu (nếu collections rỗng):
 - 7 thể loại sách
 - 1 admin user
 - 8 sample users
-- 40 quyển sách (mỗi thể loại 4 quyển)
+- 35 quyển sách (mỗi thể loại 5 quyển)
 - ~300+ bản sao sách
 - Một số bản ghi mượn trả và phạt
 
