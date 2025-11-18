@@ -72,22 +72,27 @@ Tạo ra một hệ thống thư viện trực tuyến, trong đó Server quản
 <p align="center">
   <img src="images/dn.jpg" alt="Giao diện đăng nhập" width="700"/>
 </p>
+
 ### Tổng quát ( Admin )
 <p align="center">
   <img src="images/tongquat.jpg" alt="Giao diện Admin Tổng quát" width="700"/>
 </p>
+
 ### Quản lý sách ( Admin )
 <p align="center">
   <img src="images/qlsach.jpg" alt="Giao diện Admin Quản lý sách" width="700"/>
 </p>
+
 ### Quản lý người dùng ( Admin )
 <p align="center">
   <img src="images/qlnguoidung.jpg" alt="Giao diện Admin Quản lý người dùng" width="700"/>
 </p>
+
 ### Quản lý mượn trả ( Admin )
 <p align="center">
   <img src="images/qlmuontra.jpg" alt="Giao diện Admin Quản lý mượn trả" width="700"/>
 </p>
+
 ### Báo cáo ( Admin )
 <p align="center">
   <img src="images/baocao.jpg" alt="Giao diện Admin Báo cáo" width="700"/>
@@ -97,18 +102,22 @@ Tạo ra một hệ thống thư viện trực tuyến, trong đó Server quản
 <p align="center">
   <img src="images/trangchu.jpg" alt="Giao diện User Home" width="700"/>
 </p>
+
 ### Tìm sách ( User )
 <p align="center">
   <img src="images/timsach.jpg" alt="Giao diện User Tìm sách" width="700"/>
 </p>
+
 ### Mượn trả ( User )
 <p align="center">
   <img src="images/muontra.jpg" alt="Giao diện User Mượn trả" width="700"/>
 </p>
+
 ### Thông tin ( User )
 <p align="center">
   <img src="images/thongtin.jpg" alt="Giao diện User Thông tin" width="700"/>
 </p>
+
 
 ## 📝 4. Hướng dẫn cài đặt và sử dụng
 
