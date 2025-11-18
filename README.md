@@ -22,7 +22,7 @@
 ## 📖 1. Giới thiệu
 
 Ứng dụng Quản lý sách – thư viện qua mạng được xây dựng trên mô hình Client – Server sử dụng:
-- **TCP Protocol** (ServerSocket, Socket) để trao đổi dữ liệu qua mạng.
+- **TCP** (ServerSocket, Socket) để trao đổi dữ liệu qua mạng.
 - **Java Swing** để xây dựng giao diện người dùng.
 - **MongoDB** để lưu trữ dữ liệu.
 - **Maven** để quản lý dependencies và build project.
