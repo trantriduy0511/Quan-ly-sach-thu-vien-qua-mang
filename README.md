@@ -280,13 +280,22 @@ Hệ thống sẽ tự động khởi tạo dữ liệu mẫu khi server khởi 
 
 ---
 
+## 5. 👨‍💻 Thông tin Phát triển
 
-## 👤 5. Liên hệ
-
-**Họ tên**: Trần Trí Duy.  
-**Lớp**: CNTT 16-03.  
-**Email**: trantriduy2004ss@gmail.com.
-
-© 2025 Faculty of Information Technology, DaiNam University. All rights reserved.
+| Trường thông tin         | Nội dung                                 |
+|-------------------------|-------------------------------------------|
+| **🏛️ Trường**           | Đại học Đại Nam (DaiNam University)      |
+| **💻 Khoa**              | Công nghệ Thông tin                      |
+| **📚 Môn học**           | Chuyển đổi số                            |
+| **👤 Sinh viên**         | Trần Trí Duy                            |
+| **📧 Email**             | trantriduy2004ss@gmail.com                     |
+| **Lớp**                 | CNTT 16-03                               |
+| **Năm học**             | 2025-2026                                |
 
 ---
+
+<div align="center">
+    <p><strong>© 2025 DaiNam University - Faculty of Information Technology</strong></p>
+    <p>All rights reserved.</p>
+</div>
+
