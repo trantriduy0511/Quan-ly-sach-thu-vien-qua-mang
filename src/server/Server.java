@@ -517,17 +517,48 @@ public class Server {
         private void handleRegister(Message request, Message response) {
             try {
                 User user = (User) request.getData();
+                if (user == null) {
+                    response.setSuccess(false);
+                    response.setMessage("Dữ liệu người dùng không hợp lệ");
+                    return;
+                }
+                
+                // Validate required fields
+                if (user.getEmail() == null || user.getEmail().trim().isEmpty()) {
+                    response.setSuccess(false);
+                    response.setMessage("Email không được để trống");
+                    return;
+                }
+                
+                if (user.getPassword() == null || user.getPassword().trim().isEmpty()) {
+                    response.setSuccess(false);
+                    response.setMessage("Mật khẩu không được để trống");
+                    return;
+                }
+                
                 boolean result = dbManager.register(user);
                 if (result) {
                     response.setSuccess(true);
-                    response.setMessage("Đăng ký thành công");
+                    response.setMessage("Đăng ký thành công! Vui lòng đăng nhập.");
                 } else {
                     response.setSuccess(false);
-                    response.setMessage("Email đã tồn tại hoặc có lỗi xảy ra");
+                    // Check if email exists
+                    User existingUser = dbManager.getUserByEmail(user.getEmail());
+                    if (existingUser != null) {
+                        response.setMessage("Email đã tồn tại trong hệ thống");
+                    } else {
+                        response.setMessage("Đăng ký thất bại. Vui lòng kiểm tra lại thông tin hoặc thử lại sau.");
+                    }
                 }
+            } catch (ClassCastException e) {
+                response.setSuccess(false);
+                response.setMessage("Lỗi: Dữ liệu không đúng định dạng");
+                System.err.println("Registration error - ClassCastException: " + e.getMessage());
             } catch (Exception e) {
                 response.setSuccess(false);
                 response.setMessage("Lỗi đăng ký: " + e.getMessage());
+                System.err.println("Registration error: " + e.getMessage());
+                e.printStackTrace();
             }
         }
         

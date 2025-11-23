@@ -1,0 +1,57 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run Server",
+            "request": "launch",
+            "mainClass": "server.Server",
+            "projectName": "quan-ly-sach-thu-vien",
+            "args": "",
+            "vmArgs": "",
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "java",
+            "name": "Run Client",
+            "request": "launch",
+            "mainClass": "client.LoginFrame",
+            "projectName": "quan-ly-sach-thu-vien",
+            "args": "",
+            "vmArgs": "",
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "java",
+            "name": "Debug Server",
+            "request": "launch",
+            "mainClass": "server.Server",
+            "projectName": "quan-ly-sach-thu-vien",
+            "args": "",
+            "vmArgs": "",
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "java",
+            "name": "Debug Client",
+            "request": "launch",
+            "mainClass": "client.LoginFrame",
+            "projectName": "quan-ly-sach-thu-vien",
+            "args": "",
+            "vmArgs": "",
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Run Server and Client",
+            "configurations": ["Run Server", "Run Client"],
+            "stopAll": true
+        }
+    ]
+}
+

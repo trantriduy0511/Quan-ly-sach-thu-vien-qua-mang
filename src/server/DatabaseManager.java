@@ -1130,10 +1130,20 @@ public class DatabaseManager {
             // Check if email already exists
             Document existing = usersCollection.find(eq("email", user.getEmail())).first();
             if (existing != null) {
+                System.err.println("Registration failed: Email already exists: " + user.getEmail());
                 return false;
             }
             
-            // Generate userId
+            // Check if studentId already exists
+            if (user.getStudentId() != null && !user.getStudentId().isEmpty()) {
+                Document existingStudentId = usersCollection.find(eq("studentId", user.getStudentId())).first();
+                if (existingStudentId != null) {
+                    System.err.println("Registration failed: Student ID already exists: " + user.getStudentId());
+                    return false;
+                }
+            }
+            
+            // Generate unique userId
             String userId = generateUserId();
             user.setUserId(userId);
             
@@ -1157,16 +1167,47 @@ public class DatabaseManager {
                 .append("isOnline", false);
             
             usersCollection.insertOne(doc);
+            System.out.println("User registered successfully: " + user.getEmail() + " (userId: " + userId + ")");
             return true;
+        } catch (com.mongodb.MongoWriteException e) {
+            // Handle duplicate key error
+            if (e.getError().getCode() == 11000) {
+                System.err.println("Registration failed: Duplicate key error - " + e.getMessage());
+                return false;
+            }
+            System.err.println("Error during registration (MongoWriteException): " + e.getMessage());
+            e.printStackTrace();
+            return false;
         } catch (Exception e) {
             System.err.println("Error during registration: " + e.getMessage());
+            e.printStackTrace();
             return false;
         }
     }
     
     private String generateUserId() {
-        long count = usersCollection.countDocuments();
-        return String.format("USER%03d", count + 1);
+        // Find the highest existing userId number
+        int maxNum = 0;
+        try {
+            for (Document doc : usersCollection.find()) {
+                String userId = doc.getString("userId");
+                if (userId != null && userId.startsWith("USER")) {
+                    try {
+                        int num = Integer.parseInt(userId.substring(4));
+                        if (num > maxNum) {
+                            maxNum = num;
+                        }
+                    } catch (NumberFormatException e) {
+                        // Ignore invalid userId format
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error generating userId: " + e.getMessage());
+        }
+        
+        // Generate next userId
+        return String.format("USER%03d", maxNum + 1);
     }
     
     // Book operations

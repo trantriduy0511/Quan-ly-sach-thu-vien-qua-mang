@@ -568,26 +568,58 @@ public class RegistrationFrame extends JFrame {
         user.setCurrentBorrowed(0);
         user.setTotalFines(0.0);
         
+        // Ensure client is connected
         if (!client.isConnected()) {
             if (!client.connect()) {
-                JOptionPane.showMessageDialog(this, "Không thể kết nối đến server!", 
+                JOptionPane.showMessageDialog(this, 
+                    "Không thể kết nối đến server!\n\nVui lòng kiểm tra:\n" +
+                    "- Server đã được khởi động chưa?\n" +
+                    "- Server đang chạy trên port 12345?\n" +
+                    "- Firewall có chặn kết nối không?", 
                     "Lỗi kết nối", JOptionPane.ERROR_MESSAGE);
                 return;
             }
         }
         
-        Message request = new Message(Message.REGISTER, user);
-        Message response = client.sendRequest(request);
+        // Show loading message
+        registerButton.setEnabled(false);
+        registerButton.setText("Đang xử lý...");
         
-        if (response.isSuccess()) {
-            JOptionPane.showMessageDialog(this, "Đăng ký thành công! Vui lòng đăng nhập.", 
-                "Thành công", JOptionPane.INFORMATION_MESSAGE);
-            dispose();
-            new LoginFrame().setVisible(true);
-        } else {
+        try {
+            Message request = new Message(Message.REGISTER, user);
+            Message response = client.sendRequest(request);
+            
+            if (response == null) {
+                JOptionPane.showMessageDialog(this, 
+                    "Không nhận được phản hồi từ server!\nVui lòng thử lại sau.", 
+                    "Lỗi", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+            if (response.isSuccess()) {
+                JOptionPane.showMessageDialog(this, 
+                    "Đăng ký thành công!\n\nBạn có thể đăng nhập ngay bây giờ.", 
+                    "Thành công", JOptionPane.INFORMATION_MESSAGE);
+                dispose();
+                new LoginFrame().setVisible(true);
+            } else {
+                String errorMsg = response.getMessage();
+                if (errorMsg == null || errorMsg.trim().isEmpty()) {
+                    errorMsg = "Đăng ký thất bại! Vui lòng thử lại sau.";
+                }
+                JOptionPane.showMessageDialog(this, errorMsg, 
+                    "Lỗi đăng ký", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this, 
-                response.getMessage() != null ? response.getMessage() : "Đăng ký thất bại!", 
+                "Lỗi khi gửi yêu cầu đăng ký: " + e.getMessage() + 
+                "\n\nVui lòng kiểm tra kết nối và thử lại.", 
                 "Lỗi", JOptionPane.ERROR_MESSAGE);
+            System.err.println("Registration error: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            registerButton.setEnabled(true);
+            registerButton.setText("Đăng ký");
         }
     }
 }

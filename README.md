@@ -1,1 +1,354 @@
 
+<<<<<<< HEAD
+=======
+[![AIoTLab](https://img.shields.io/badge/AIoTLab-green?style=for-the-badge)](https://www.facebook.com/DNUAIoTLab)
+[![Faculty of Information Technology](https://img.shields.io/badge/Faculty%20of%20Information%20Technology-blue?style=for-the-badge)](https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin)
+[![DaiNam University](https://img.shields.io/badge/DaiNam%20University-orange?style=for-the-badge)](https://dainam.edu.vn)
+
+</div>
+
+## 📖 1. Giới thiệu
+
+Ứng dụng Quản lý sách – thư viện qua mạng được xây dựng trên mô hình Client – Server sử dụng:
+- **TCP Protocol** (ServerSocket, Socket) để trao đổi dữ liệu qua mạng.
+- **Java Swing** để xây dựng giao diện người dùng.
+- **MongoDB** để lưu trữ dữ liệu.
+- **Maven** để quản lý dependencies và build project.
+
+📌 **Mục tiêu**
+
+Tạo ra một hệ thống thư viện trực tuyến, trong đó Server quản lý dữ liệu (sách, người dùng, mượn/trả), còn Client cung cấp giao diện cho người dùng đăng nhập, tìm kiếm và mượn sách từ xa với phân quyền Admin và User.
+
+### ✨ Các chức năng chính
+
+#### Chức năng chung
+- **Đăng nhập/Đăng ký** người dùng với phân quyền (Admin/User)
+- **Tìm kiếm sách** theo tên, tác giả, thể loại
+- **Xem danh sách sách** với đầy đủ thông tin
+
+#### Chức năng Admin
+- **Quản lý sách**: Thêm, Sửa, Xóa sách, Quản lý Book Copies
+- **Quản lý người dùng**: Thêm, Sửa, Xóa người dùng, Khóa/Mở khóa tài khoản, Đặt lại mật khẩu
+- **Quản lý mượn trả**: Xem tất cả bản ghi mượn trả, Đánh dấu mất/hỏng sách, Bắt buộc trả sách
+- **Dashboard & Báo cáo**: Thống kê tổng quan, Báo cáo sách, Báo cáo người dùng, Báo cáo mượn trả, Báo cáo phạt
+
+#### Chức năng User
+- **Xem trang chủ** với thống kê cá nhân
+- **Tìm kiếm và xem chi tiết sách**
+- **Mượn sách** (giới hạn 5 sách/người)
+- **Trả sách** với tính phạt tự động
+- **Gia hạn sách**
+- **Xem lịch sử mượn sách** của mình
+- **Xem và sửa thông tin cá nhân**
+
+## 🔧 2. Ngôn ngữ lập trình sử dụng
+
+[![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)](https://maven.apache.org/)
+
+- **Ngôn ngữ lập trình**: Java (JDK 11+)  
+- **Giao diện**: Java Swing  
+- **Mạng**: TCP Protocol (ServerSocket, Socket)  
+- **Lưu trữ dữ liệu**: MongoDB (NoSQL Database)
+- **Build Tool**: Maven
+- **Môi trường phát triển**: IntelliJ IDEA, Eclipse, hoặc NetBeans
+- **Hệ điều hành**: Windows / macOS / Linux
+
+## 🚀 3. Hình ảnh giao diện
+
+<p align="center">
+  <img src="images/login_screenshot.png" alt="Giao diện đăng nhập" width="700"/>
+</p>
+
+<p align="center">
+  <img src="images/admin_dashboard_screenshot.png" alt="Giao diện Admin Dashboard" width="700"/>
+</p>
+
+<p align="center">
+  <img src="images/user_home_screenshot.png" alt="Giao diện User Home" width="700"/>
+</p>
+
+## 📝 4. Hướng dẫn cài đặt và sử dụng
+
+### 🔧 Yêu cầu hệ thống
+
+- **Java Development Kit (JDK)**: Phiên bản 11 trở lên  
+- **Maven**: Phiên bản 3.6+ (hoặc sử dụng Maven wrapper có sẵn)
+- **MongoDB Server**: Đang chạy trên `localhost:27017`
+- **MongoDB Compass**: Khuyến nghị để xem dữ liệu (tùy chọn)
+- **Hệ điều hành**: Windows / macOS / Linux
+- **IDE khuyến nghị**: Visual Studio Code (với Extension Pack for Java), IntelliJ IDEA, Eclipse, hoặc NetBeans
+- **Bộ nhớ**: Tối thiểu 512MB RAM  
+
+---
+
+### 📦 Các bước triển khai
+
+#### 🔹 Bước 1: Chuẩn bị môi trường
+
+1. **Cài đặt JDK** nếu chưa có:  
+   - Kiểm tra bằng lệnh:  
+     ```bash
+     java -version
+     javac -version
+     ```
+   - Nếu chưa có, tải JDK tại [Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html) hoặc [OpenJDK](https://adoptium.net/).
+
+2. **Cài đặt MongoDB**:
+   - Tải và cài đặt MongoDB từ [MongoDB Download Center](https://www.mongodb.com/try/download/community)
+   - Khởi động MongoDB Server trên port mặc định 27017
+   - (Tùy chọn) Cài đặt MongoDB Compass để quản lý database
+
+3. **Cài đặt Maven** (nếu chưa có):
+   - Tải Maven từ [Apache Maven](https://maven.apache.org/download.cgi)
+   - Hoặc sử dụng Maven wrapper có sẵn trong project
+
+4. **Cài đặt VS Code và Extension Pack for Java** (nếu sử dụng VS Code):
+   - Tải và cài đặt [Visual Studio Code](https://code.visualstudio.com/)
+   - Mở VS Code, vào Extensions (Ctrl+Shift+X)
+   - Tìm và cài đặt **"Extension Pack for Java"** (Microsoft)
+   - VS Code sẽ tự động cài đặt các extension cần thiết
+
+5. **Tải mã nguồn dự án**:  
+   - Clone repo bằng Git hoặc tải file `.zip` và giải nén
+   - Mở thư mục dự án trong VS Code (File → Open Folder)
+
+---
+
+#### 🔹 Bước 2: Cấu hình MongoDB
+
+1. Đảm bảo MongoDB Server đang chạy:
+   ```bash
+   # Kiểm tra MongoDB đang chạy
+   mongosh
+   # Hoặc sử dụng MongoDB Compass để kết nối
+   ```
+
+2. Database `library_db` sẽ được tạo tự động khi server khởi động lần đầu.
+
+---
+
+#### 🔹 Bước 3: Biên dịch mã nguồn
+
+**Sử dụng VS Code (Khuyến nghị):**
+
+1. Mở dự án trong VS Code
+2. Nhấn `Ctrl+Shift+P` (hoặc `Cmd+Shift+P` trên Mac)
+3. Gõ "Tasks: Run Task"
+4. Chọn **"Maven: Clean Compile"** để build dự án
+
+**Hoặc sử dụng Terminal trong VS Code:**
+- Mở Terminal (Ctrl+`) hoặc View → Terminal
+- Chạy lệnh:
+  ```bash
+  mvn clean compile
+  ```
+
+**Hoặc sử dụng script:**
+- **Windows:** `build-maven.bat`
+- **Linux/Mac:** `chmod +x build-maven.sh && ./build-maven.sh`
+
+---
+
+#### 🔹 Bước 4: Chạy Server
+
+**Sử dụng VS Code (Khuyến nghị):**
+
+1. Nhấn `F5` hoặc vào tab **"Run and Debug"** (Ctrl+Shift+D)
+2. Chọn **"Run Server"** từ dropdown ở trên cùng
+3. Nhấn nút Run (▶️) hoặc nhấn `F5`
+
+**Hoặc sử dụng Terminal trong VS Code:**
+- Mở Terminal (Ctrl+`)
+- Chạy lệnh:
+  ```bash
+  mvn exec:java -Dexec.mainClass="server.Server"
+  ```
+
+**Hoặc sử dụng script:**
+- **Windows:** `run-server-maven.bat`
+- **Linux/Mac:** `chmod +x run-server-maven.sh && ./run-server-maven.sh`
+
+Server sẽ chạy trên **port 12345**. Bạn sẽ thấy thông báo:
+```
+Server started on port 12345
+Database connected successfully
+Initializing data...
+```
+
+---
+
+#### 🔹 Bước 5: Chạy Client
+
+**Sử dụng VS Code (Khuyến nghị):**
+
+1. Đảm bảo Server đã chạy (Bước 4)
+2. Nhấn `F5` hoặc vào tab **"Run and Debug"** (Ctrl+Shift+D)
+3. Chọn **"Run Client"** từ dropdown ở trên cùng
+4. Nhấn nút Run (▶️) hoặc nhấn `F5`
+
+**Lưu ý:** Nếu muốn chạy đồng thời Server và Client, chọn **"Run Server and Client"** từ dropdown.
+
+**Hoặc sử dụng Terminal trong VS Code:**
+- Mở Terminal mới (Ctrl+Shift+`) hoặc tạo terminal mới
+- Chạy lệnh:
+  ```bash
+  mvn exec:java -Dexec.mainClass="client.LoginFrame"
+  ```
+
+**Hoặc sử dụng script:**
+- **Windows:** `run-client-maven.bat`
+- **Linux/Mac:** `chmod +x run-client-maven.sh && ./run-client-maven.sh`
+
+Giao diện đăng nhập sẽ hiện ra.
+
+---
+
+#### 🔹 Bước 6: Đăng nhập
+
+Sau khi khởi tạo dữ liệu, hệ thống sẽ tự động tạo tài khoản mặc định:
+
+- **Admin**: 
+  - Email: `admin@library.com` (hoặc theo cấu hình trong DatabaseManager)
+  - Password: `admin123`
+
+- **User**: Có thể đăng ký tài khoản mới hoặc sử dụng tài khoản mẫu đã được tạo tự động.
+
+---
+
+#### 🔹 Bước 7: Debug trong VS Code (Tùy chọn)
+
+Để debug ứng dụng trong VS Code:
+
+1. **Debug Server:**
+   - Đặt breakpoint tại dòng code muốn debug
+   - Chọn **"Debug Server"** từ dropdown trong Run and Debug
+   - Nhấn `F5` để bắt đầu debug
+
+2. **Debug Client:**
+   - Đặt breakpoint tại dòng code muốn debug
+   - Chọn **"Debug Client"** từ dropdown trong Run and Debug
+   - Nhấn `F5` để bắt đầu debug
+
+3. **Các phím tắt debug:**
+   - `F5`: Continue
+   - `F10`: Step Over
+   - `F11`: Step Into
+   - `Shift+F11`: Step Out
+   - `Shift+F5`: Stop
+
+**Lưu ý:** Xem thêm hướng dẫn chi tiết trong file `.vscode/README_VSCODE.md`
+
+---
+
+### 📊 Cấu trúc Database MongoDB
+
+Database: `library_db`
+
+**Collections:**
+- `users` - Thông tin người dùng
+- `books` - Thông tin sách
+- `book_copies` - Bản sao sách
+- `borrow_records` - Lịch sử mượn trả
+- `fines` - Thông tin phạt
+- `categories` - Thể loại sách
+
+Hệ thống sẽ tự động khởi tạo dữ liệu mẫu khi server khởi động lần đầu (nếu collections rỗng):
+- 7 thể loại sách
+- 1 admin user
+- 8 sample users
+- 40 quyển sách (mỗi thể loại 4 quyển)
+- ~300+ bản sao sách
+- Một số bản ghi mượn trả và phạt
+
+---
+
+### 🏗️ Cấu trúc Project
+
+```
+Quan_Ly_Sach_Thu_Vien_Qua_Mang/
+├── src/
+│   ├── model/
+│   │   ├── Book.java          # Model sách
+│   │   ├── BookCopy.java      # Model bản sao sách
+│   │   ├── User.java          # Model người dùng
+│   │   └── BorrowRecord.java  # Model phiếu mượn
+│   ├── server/
+│   │   ├── Server.java        # TCP Server với multi-threading
+│   │   ├── DatabaseManager.java # Quản lý database MongoDB
+│   │   └── DataImporter.java  # Import dữ liệu
+│   ├── client/
+│   │   ├── Client.java        # TCP Client
+│   │   ├── LoginFrame.java    # Giao diện đăng nhập
+│   │   ├── RegistrationFrame.java # Giao diện đăng ký
+│   │   ├── AdminFrame.java    # Giao diện Admin
+│   │   └── UserFrame.java     # Giao diện User
+│   └── util/
+│       └── Message.java       # Class Message để giao tiếp
+├── .vscode/                   # Cấu hình VS Code
+│   ├── launch.json            # Cấu hình Run/Debug
+│   ├── tasks.json             # Cấu hình Tasks (Maven)
+│   ├── settings.json          # Cấu hình Java project
+│   └── README_VSCODE.md       # Hướng dẫn sử dụng VS Code
+├── lib/                       # Thư mục chứa các thư viện JAR
+├── bin/                       # Thư mục chứa file .class
+├── target/                    # Thư mục build của Maven
+├── pom.xml                    # File cấu hình Maven
+├── build-maven.bat            # Script build (Windows)
+├── run-server-maven.bat       # Script chạy server (Windows)
+├── run-client-maven.bat       # Script chạy client (Windows)
+└── README.md                  # File hướng dẫn này
+```
+
+---
+
+### 🔌 Giao thức giao tiếp
+
+Ứng dụng sử dụng giao thức TCP với các loại message:
+
+**Authentication:**
+- `LOGIN`, `REGISTER`, `LOGOUT`
+
+**Books Management:**
+- `GET_ALL_BOOKS`, `SEARCH_BOOKS`, `ADD_BOOK`, `UPDATE_BOOK`, `DELETE_BOOK`
+- `GET_BOOK_COPIES`, `ADD_BOOK_COPY`, `DELETE_BOOK_COPY`
+
+**Users Management (Admin only):**
+- `GET_ALL_USERS`, `ADD_USER`, `UPDATE_USER`, `DELETE_USER`
+- `LOCK_USER`, `UNLOCK_USER`, `RESET_PASSWORD`
+
+**Borrow/Return Management:**
+- `BORROW_BOOK`, `RETURN_BOOK`, `RENEW_BOOK`
+- `GET_USER_BORROW_RECORDS`, `GET_ALL_BORROW_RECORDS`
+- `MARK_LOST`, `MARK_DAMAGED`, `FORCE_RETURN`
+
+**Dashboard & Reports (Admin only):**
+- `GET_DASHBOARD_STATS`, `GET_BOOK_REPORT`, `GET_USER_REPORT`
+- `GET_BORROW_REPORT`, `GET_PENALTY_REPORT`
+
+---
+
+### ⚠️ Lưu ý
+
+- Phải chạy Server trước khi chạy Client
+- Có thể chạy nhiều Client cùng lúc (multi-threading)
+- Database MongoDB sẽ được tạo tự động khi server khởi động lần đầu
+- Dữ liệu mẫu sẽ được tạo tự động nếu collections rỗng
+- Server phải được chạy liên tục để client có thể kết nối
+- **VS Code:** Đảm bảo đã cài đặt Extension Pack for Java trước khi chạy project
+- **VS Code:** Nếu gặp lỗi khi chạy, kiểm tra Java version trong VS Code (Ctrl+Shift+P → "Java: Configure Java Runtime")
+
+---
+
+## 👤 5. Liên hệ
+
+**Dự án được phát triển cho môn học Lập Trình Mạng.**
+
+**Faculty of Information Technology**  
+**DaiNam University**
+
+© 2025 Faculty of Information Technology, DaiNam University. All rights reserved.
+
+---
+>>>>>>> de809e5 (Update code mới nhất)
