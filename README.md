@@ -319,42 +319,6 @@ Hệ thống sẽ tự động khởi tạo dữ liệu mẫu khi server khởi 
 
 ---
 
-### 🏗️ Cấu trúc Project
-
-```
-Quan_Ly_Sach_Thu_Vien_Qua_Mang/
-├── src/
-│   ├── model/
-│   │   ├── Book.java          # Model sách
-│   │   ├── BookCopy.java      # Model bản sao sách
-│   │   ├── User.java          # Model người dùng
-│   │   └── BorrowRecord.java  # Model phiếu mượn
-│   ├── server/
-│   │   ├── Server.java        # TCP Server với multi-threading
-│   │   ├── DatabaseManager.java # Quản lý database MongoDB
-│   │   └── DataImporter.java  # Import dữ liệu
-│   ├── client/
-│   │   ├── Client.java        # TCP Client
-│   │   ├── LoginFrame.java    # Giao diện đăng nhập
-│   │   ├── RegistrationFrame.java # Giao diện đăng ký
-│   │   ├── AdminFrame.java    # Giao diện Admin
-│   │   └── UserFrame.java     # Giao diện User
-│   └── util/
-│       └── Message.java       # Class Message để giao tiếp
-├── .vscode/                   # Cấu hình VS Code
-│   ├── launch.json            # Cấu hình Run/Debug
-│   ├── tasks.json             # Cấu hình Tasks (Maven)
-│   ├── settings.json          # Cấu hình Java project
-│   └── README_VSCODE.md       # Hướng dẫn sử dụng VS Code
-├── lib/                       # Thư mục chứa các thư viện JAR
-├── bin/                       # Thư mục chứa file .class
-├── target/                    # Thư mục build của Maven
-├── pom.xml                    # File cấu hình Maven
-├── build-maven.bat            # Script build (Windows)
-├── run-server-maven.bat       # Script chạy server (Windows)
-├── run-client-maven.bat       # Script chạy client (Windows)
-└── README.md                  # File hướng dẫn này
-```
 
 ---
 
