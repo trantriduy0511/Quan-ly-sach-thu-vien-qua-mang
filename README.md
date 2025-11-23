@@ -1,8 +1,20 @@
+<h2 align="center">
+    <a href="https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin">
+    🎓 Faculty of Information Technology (DaiNam University)
+    </a>
+</h2>
+<h2 align="center">
+   QUẢN LÝ SÁCH - THƯ VIỆN QUA MẠNG
+</h2>
+<div align="center">
+    <p align="center">
+        <img src="images/aiotlab_logo.png" alt="AIoTLab Logo" width="170"/>
+        <img src="images/fitdnu_logo.png" alt="FIT Logo" width="180"/>
+        <img src="images/dnu_logo.png" alt="DaiNam University Logo" width="200"/>
+    </p>
 
-<<<<<<< HEAD
-=======
 [![AIoTLab](https://img.shields.io/badge/AIoTLab-green?style=for-the-badge)](https://www.facebook.com/DNUAIoTLab)
-[![Faculty of Information Technology](https://img.shields.io/badge/Faculty%20of%20Information%20Technology-blue?style=for-the-badge)](https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin)
+[![Faculty of Information Technology](https://img.shields.io/badge/Faculty%20of%20Information%20T…he-badge)](https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin)
 [![DaiNam University](https://img.shields.io/badge/DaiNam%20University-orange?style=for-the-badge)](https://dainam.edu.vn)
 
 </div>
@@ -10,7 +22,7 @@
 ## 📖 1. Giới thiệu
 
 Ứng dụng Quản lý sách – thư viện qua mạng được xây dựng trên mô hình Client – Server sử dụng:
-- **TCP Protocol** (ServerSocket, Socket) để trao đổi dữ liệu qua mạng.
+- **TCP** (ServerSocket, Socket) để trao đổi dữ liệu qua mạng.
 - **Java Swing** để xây dựng giao diện người dùng.
 - **MongoDB** để lưu trữ dữ liệu.
 - **Maven** để quản lý dependencies và build project.
@@ -45,29 +57,67 @@ Tạo ra một hệ thống thư viện trực tuyến, trong đó Server quản
 
 [![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)](https://maven.apache.org/)
+[![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-bad…ogo=apache-maven&logoColor=white)](https://maven.apache.org/)
 
 - **Ngôn ngữ lập trình**: Java (JDK 11+)  
 - **Giao diện**: Java Swing  
 - **Mạng**: TCP Protocol (ServerSocket, Socket)  
 - **Lưu trữ dữ liệu**: MongoDB (NoSQL Database)
 - **Build Tool**: Maven
-- **Môi trường phát triển**: IntelliJ IDEA, Eclipse, hoặc NetBeans
+- **Môi trường phát triển**: Visual Studio Code (khuyến nghị), IntelliJ IDEA, Eclipse, hoặc NetBeans
 - **Hệ điều hành**: Windows / macOS / Linux
 
 ## 🚀 3. Hình ảnh giao diện
-
+### Giao diện đăng nhập
 <p align="center">
-  <img src="images/login_screenshot.png" alt="Giao diện đăng nhập" width="700"/>
+  <img src="images/dn.jpg" alt="Giao diện đăng nhập" width="700"/>
 </p>
 
+### Tổng quát ( Admin )
 <p align="center">
-  <img src="images/admin_dashboard_screenshot.png" alt="Giao diện Admin Dashboard" width="700"/>
+  <img src="images/tongquat.jpg" alt="Giao diện Admin Tổng quát" width="700"/>
 </p>
 
+### Quản lý sách ( Admin )
 <p align="center">
-  <img src="images/user_home_screenshot.png" alt="Giao diện User Home" width="700"/>
+  <img src="images/qlsach.jpg" alt="Giao diện Admin Quản lý sách" width="700"/>
 </p>
+
+### Quản lý người dùng ( Admin )
+<p align="center">
+  <img src="images/qlnguoidung.jpg" alt="Giao diện Admin Quản lý người dùng" width="700"/>
+</p>
+
+### Quản lý mượn trả ( Admin )
+<p align="center">
+  <img src="images/qlmuontra.jpg" alt="Giao diện Admin Quản lý mượn trả" width="700"/>
+</p>
+
+### Báo cáo ( Admin )
+<p align="center">
+  <img src="images/baocao.jpg" alt="Giao diện Admin Báo cáo" width="700"/>
+</p>
+
+### Trang chủ ( User )
+<p align="center">
+  <img src="images/trangchu.jpg" alt="Giao diện User Home" width="700"/>
+</p>
+
+### Tìm sách ( User )
+<p align="center">
+  <img src="images/timsach.jpg" alt="Giao diện User Tìm sách" width="700"/>
+</p>
+
+### Mượn trả ( User )
+<p align="center">
+  <img src="images/muontra.jpg" alt="Giao diện User Mượn trả" width="700"/>
+</p>
+
+### Thông tin ( User )
+<p align="center">
+  <img src="images/thongtin.jpg" alt="Giao diện User Thông tin" width="700"/>
+</p>
+
 
 ## 📝 4. Hướng dẫn cài đặt và sử dụng
 
@@ -93,7 +143,7 @@ Tạo ra một hệ thống thư viện trực tuyến, trong đó Server quản
      java -version
      javac -version
      ```
-   - Nếu chưa có, tải JDK tại [Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html) hoặc [OpenJDK](https://adoptium.net/).
+- Nếu chưa có, tải JDK tại [Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html) hoặc [OpenJDK](https://adoptium.net/).
 
 2. **Cài đặt MongoDB**:
    - Tải và cài đặt MongoDB từ [MongoDB Download Center](https://www.mongodb.com/try/download/community)
@@ -210,8 +260,8 @@ Giao diện đăng nhập sẽ hiện ra.
 Sau khi khởi tạo dữ liệu, hệ thống sẽ tự động tạo tài khoản mặc định:
 
 - **Admin**: 
-  - Email: `admin@library.com` (hoặc theo cấu hình trong DatabaseManager)
-  - Password: `admin123`
+  - Email: `dainam@dnu.edu.vn` (hoặc theo cấu hình trong DatabaseManager)
+  - Password: `dainam`
 
 - **User**: Có thể đăng ký tài khoản mới hoặc sử dụng tài khoản mẫu đã được tạo tự động.
 
@@ -247,20 +297,25 @@ Sau khi khởi tạo dữ liệu, hệ thống sẽ tự động tạo tài kho�
 Database: `library_db`
 
 **Collections:**
-- `users` - Thông tin người dùng
-- `books` - Thông tin sách
 - `book_copies` - Bản sao sách
+- `books` - Thông tin sách
 - `borrow_records` - Lịch sử mượn trả
-- `fines` - Thông tin phạt
 - `categories` - Thể loại sách
+- `fines` - Thông tin phạt
+- `notifications` - Thông báo yêu cầu trả sách 
+- `settings` - Cài đặt
+- `users` - Thông tin người dùng
+
 
 Hệ thống sẽ tự động khởi tạo dữ liệu mẫu khi server khởi động lần đầu (nếu collections rỗng):
 - 7 thể loại sách
 - 1 admin user
 - 8 sample users
-- 40 quyển sách (mỗi thể loại 4 quyển)
+- 35 quyển sách (mỗi thể loại 5 quyển)
 - ~300+ bản sao sách
 - Một số bản ghi mượn trả và phạt
+
+---
 
 ---
 
@@ -341,14 +396,21 @@ Quan_Ly_Sach_Thu_Vien_Qua_Mang/
 
 ---
 
-## 👤 5. Liên hệ
+## 👨‍💻 5. Thông tin Phát triển
 
-**Dự án được phát triển cho môn học Lập Trình Mạng.**
-
-**Faculty of Information Technology**  
-**DaiNam University**
-
-© 2025 Faculty of Information Technology, DaiNam University. All rights reserved.
+| Trường thông tin         | Nội dung                                 |
+|-------------------------|-------------------------------------------|
+| **🏛️ Trường**           | Đại học Đại Nam (DaiNam University)      |
+| **💻 Khoa**              | Công nghệ Thông tin                      |
+| **📚 Môn học**           | Lập Trình Mạng                            |
+| **👤 Sinh viên**         | Trần Trí Duy                            |
+| **📧 Email**             | trantriduy2004ss@gmail.com               |
+| **Lớp**                 | CNTT 16-03                               |
+| **Năm học**             | 2025-2026                                |
 
 ---
->>>>>>> de809e5 (Update code mới nhất)
+
+<div align="center">
+    <p><strong>© 2025 DaiNam University - Faculty of Information Technology</strong></p>
+    <p>All rights reserved.</p>
+</div>
