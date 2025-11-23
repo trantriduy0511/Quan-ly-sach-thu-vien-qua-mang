@@ -137,158 +137,68 @@ Tạo ra một hệ thống thư viện trực tuyến, trong đó Server quản
 
 #### 🔹 Bước 1: Chuẩn bị môi trường
 
-1. **Cài đặt JDK** nếu chưa có:  
-   - Kiểm tra bằng lệnh:  
-     ```bash
-     java -version
-     javac -version
-     ```
-- Nếu chưa có, tải JDK tại [Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html) hoặc [OpenJDK](https://adoptium.net/).
+1. **Cài đặt các công cụ cần thiết:**
+   - **JDK 11+**: Tải tại [Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html) hoặc [OpenJDK](https://adoptium.net/)
+   - **MongoDB**: Tải tại [MongoDB Download Center](https://www.mongodb.com/try/download/community) và khởi động trên port 27017
+   - **Maven 3.6+**: Tải tại [Apache Maven](https://maven.apache.org/download.cgi)
+   - **VS Code**: Tải tại [Visual Studio Code](https://code.visualstudio.com/) và cài đặt **Extension Pack for Java**
 
-2. **Cài đặt MongoDB**:
-   - Tải và cài đặt MongoDB từ [MongoDB Download Center](https://www.mongodb.com/try/download/community)
-   - Khởi động MongoDB Server trên port mặc định 27017
-   - (Tùy chọn) Cài đặt MongoDB Compass để quản lý database
-
-3. **Cài đặt Maven** (nếu chưa có):
-   - Tải Maven từ [Apache Maven](https://maven.apache.org/download.cgi)
-   - Hoặc sử dụng Maven wrapper có sẵn trong project
-
-4. **Cài đặt VS Code và Extension Pack for Java** (nếu sử dụng VS Code):
-   - Tải và cài đặt [Visual Studio Code](https://code.visualstudio.com/)
-   - Mở VS Code, vào Extensions (Ctrl+Shift+X)
-   - Tìm và cài đặt **"Extension Pack for Java"** (Microsoft)
-   - VS Code sẽ tự động cài đặt các extension cần thiết
-
-5. **Tải mã nguồn dự án**:  
-   - Clone repo bằng Git hoặc tải file `.zip` và giải nén
-   - Mở thư mục dự án trong VS Code (File → Open Folder)
-
----
-
-#### 🔹 Bước 2: Cấu hình MongoDB
-
-1. Đảm bảo MongoDB Server đang chạy:
+2. **Clone và mở project:**
    ```bash
-   # Kiểm tra MongoDB đang chạy
-   mongosh
-   # Hoặc sử dụng MongoDB Compass để kết nối
+   git clone https://github.com/trantriduy0511/Quan-ly-sach-thu-vien-qua-mang.git
+   cd Quan-ly-sach-thu-vien-qua-mang
    ```
-
-2. Database `library_db` sẽ được tạo tự động khi server khởi động lần đầu.
-
----
-
-#### 🔹 Bước 3: Biên dịch mã nguồn
-
-**Sử dụng VS Code (Khuyến nghị):**
-
-1. Mở dự án trong VS Code
-2. Nhấn `Ctrl+Shift+P` (hoặc `Cmd+Shift+P` trên Mac)
-3. Gõ "Tasks: Run Task"
-4. Chọn **"Maven: Clean Compile"** để build dự án
-
-**Hoặc sử dụng Terminal trong VS Code:**
-- Mở Terminal (Ctrl+`) hoặc View → Terminal
-- Chạy lệnh:
-  ```bash
-  mvn clean compile
-  ```
-
-**Hoặc sử dụng script:**
-- **Windows:** `build-maven.bat`
-- **Linux/Mac:** `chmod +x build-maven.sh && ./build-maven.sh`
+   Mở thư mục project trong VS Code (File → Open Folder)
 
 ---
 
-#### 🔹 Bước 4: Chạy Server
+#### 🔹 Bước 2: Build và chạy
 
 **Sử dụng VS Code (Khuyến nghị):**
 
-1. Nhấn `F5` hoặc vào tab **"Run and Debug"** (Ctrl+Shift+D)
-2. Chọn **"Run Server"** từ dropdown ở trên cùng
-3. Nhấn nút Run (▶️) hoặc nhấn `F5`
+1. **Build project:**
+   - Nhấn `Ctrl+Shift+P` → Gõ "Tasks: Run Task" → Chọn **"Maven: Clean Compile"**
+   - Hoặc mở Terminal (Ctrl+`) và chạy: `mvn clean compile`
 
-**Hoặc sử dụng Terminal trong VS Code:**
-- Mở Terminal (Ctrl+`)
-- Chạy lệnh:
-  ```bash
-  mvn exec:java -Dexec.mainClass="server.Server"
-  ```
+2. **Chạy Server:**
+   - Nhấn `F5` hoặc vào tab **"Run and Debug"** (Ctrl+Shift+D)
+   - Chọn **"Run Server"** → Nhấn Run (▶️)
+   - Server sẽ chạy trên **port 12345**
 
-**Hoặc sử dụng script:**
-- **Windows:** `run-server-maven.bat`
-- **Linux/Mac:** `chmod +x run-server-maven.sh && ./run-server-maven.sh`
+3. **Chạy Client:**
+   - Đảm bảo Server đã chạy
+   - Chọn **"Run Client"** từ dropdown → Nhấn Run (▶️)
+   - Hoặc chọn **"Run Server and Client"** để chạy đồng thời
 
-Server sẽ chạy trên **port 12345**. Bạn sẽ thấy thông báo:
+**Hoặc sử dụng Terminal:**
+```bash
+# Build
+mvn clean compile
+
+# Chạy Server (terminal 1)
+mvn exec:java -Dexec.mainClass="server.Server"
+
+# Chạy Client (terminal 2)
+mvn exec:java -Dexec.mainClass="client.LoginFrame"
 ```
-Server started on port 12345
-Database connected successfully
-Initializing data...
+
+**Hoặc sử dụng script (Windows):**
+```bash
+build-maven.bat
+run-server-maven.bat    # Terminal 1
+run-client-maven.bat     # Terminal 2
 ```
 
 ---
 
-#### 🔹 Bước 5: Chạy Client
+#### 🔹 Bước 3: Đăng nhập
 
-**Sử dụng VS Code (Khuyến nghị):**
+Tài khoản mặc định sau khi khởi tạo dữ liệu:
 
-1. Đảm bảo Server đã chạy (Bước 4)
-2. Nhấn `F5` hoặc vào tab **"Run and Debug"** (Ctrl+Shift+D)
-3. Chọn **"Run Client"** từ dropdown ở trên cùng
-4. Nhấn nút Run (▶️) hoặc nhấn `F5`
+- **Admin**: Email `dainam@dnu.edu.vn` / Password `dainam`
+- **User**: Đăng ký tài khoản mới hoặc sử dụng tài khoản mẫu
 
-**Lưu ý:** Nếu muốn chạy đồng thời Server và Client, chọn **"Run Server and Client"** từ dropdown.
-
-**Hoặc sử dụng Terminal trong VS Code:**
-- Mở Terminal mới (Ctrl+Shift+`) hoặc tạo terminal mới
-- Chạy lệnh:
-  ```bash
-  mvn exec:java -Dexec.mainClass="client.LoginFrame"
-  ```
-
-**Hoặc sử dụng script:**
-- **Windows:** `run-client-maven.bat`
-- **Linux/Mac:** `chmod +x run-client-maven.sh && ./run-client-maven.sh`
-
-Giao diện đăng nhập sẽ hiện ra.
-
----
-
-#### 🔹 Bước 6: Đăng nhập
-
-Sau khi khởi tạo dữ liệu, hệ thống sẽ tự động tạo tài khoản mặc định:
-
-- **Admin**: 
-  - Email: `dainam@dnu.edu.vn` (hoặc theo cấu hình trong DatabaseManager)
-  - Password: `dainam`
-
-- **User**: Có thể đăng ký tài khoản mới hoặc sử dụng tài khoản mẫu đã được tạo tự động.
-
----
-
-#### 🔹 Bước 7: Debug trong VS Code (Tùy chọn)
-
-Để debug ứng dụng trong VS Code:
-
-1. **Debug Server:**
-   - Đặt breakpoint tại dòng code muốn debug
-   - Chọn **"Debug Server"** từ dropdown trong Run and Debug
-   - Nhấn `F5` để bắt đầu debug
-
-2. **Debug Client:**
-   - Đặt breakpoint tại dòng code muốn debug
-   - Chọn **"Debug Client"** từ dropdown trong Run and Debug
-   - Nhấn `F5` để bắt đầu debug
-
-3. **Các phím tắt debug:**
-   - `F5`: Continue
-   - `F10`: Step Over
-   - `F11`: Step Into
-   - `Shift+F11`: Step Out
-   - `Shift+F5`: Stop
-
-**Lưu ý:** Xem thêm hướng dẫn chi tiết trong file `.vscode/README_VSCODE.md`
+**Lưu ý:** Database `library_db` sẽ được tạo tự động khi server khởi động lần đầu.
 
 ---
 
@@ -319,6 +229,23 @@ Hệ thống sẽ tự động khởi tạo dữ liệu mẫu khi server khởi 
 
 ---
 
+
+---
+
+### 🏗️ Cấu trúc Project
+
+```
+Quan_Ly_Sach_Thu_Vien_Qua_Mang/
+├── src/
+│   ├── model/          # Model sách, người dùng, mượn trả
+│   ├── server/         # TCP Server và DatabaseManager
+│   ├── client/         # TCP Client và giao diện
+│   └── util/           # Message class
+├── .vscode/            # Cấu hình VS Code
+├── lib/                # Thư viện JAR
+├── target/             # Build output
+└── pom.xml             # Maven configuration
+```
 
 ---
 
