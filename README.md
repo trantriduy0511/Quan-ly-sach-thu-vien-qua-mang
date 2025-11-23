@@ -229,19 +229,6 @@ Hệ thống sẽ tự động khởi tạo dữ liệu mẫu khi server khởi 
 
 ---
 
-
-### ⚠️ Lưu ý
-
-- Phải chạy Server trước khi chạy Client
-- Có thể chạy nhiều Client cùng lúc (multi-threading)
-- Database MongoDB sẽ được tạo tự động khi server khởi động lần đầu
-- Dữ liệu mẫu sẽ được tạo tự động nếu collections rỗng
-- Server phải được chạy liên tục để client có thể kết nối
-- **VS Code:** Đảm bảo đã cài đặt Extension Pack for Java trước khi chạy project
-- **VS Code:** Nếu gặp lỗi khi chạy, kiểm tra Java version trong VS Code (Ctrl+Shift+P → "Java: Configure Java Runtime")
-
----
-
 ## 👨‍💻 5. Thông tin Phát triển
 
 | Trường thông tin         | Nội dung                                 |
